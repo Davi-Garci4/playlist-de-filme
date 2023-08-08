@@ -41,4 +41,23 @@ class Serie(Programa):
     def __str__(self):
         return f" {self._nome} - {self.ano} - {self.temporada} Temporadas -  {self._likes} Likes"
 
+class Playlist():
+    def __init__(self, nome, programas):
+        self.nome = nome
+        self._programas = programas
+
+    def __getitem__(self, item):       #Aqui o "__getitem__" esta trazendo algumas noções de sequência ao objeto e alguns métodos como "for" e "in".
+        return self._programas[item]
+
+    def ver_programas(self):
+        for programas in self._programas:
+            print(programas)
+
+
+    @property
+    def tamanho(self):
+        return len(self._programas)
+
+
+
 
