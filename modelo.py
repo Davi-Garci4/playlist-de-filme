@@ -42,20 +42,20 @@ class Serie(Programa):
         return f" {self._nome} - {self.ano} - {self.temporada} Temporadas -  {self._likes} Likes"
 
 class Playlist():
-    def __init__(self, nome, programas):
+    def __init__(self, nome, programas):    #Atributos da playlist
         self.nome = nome
         self._programas = programas
 
     def __getitem__(self, item):       #Aqui o "__getitem__" esta trazendo algumas noções de sequência ao objeto e alguns métodos como "for" e "in".
         return self._programas[item]
 
-    def ver_programas(self):
+    def ver_programas(self):            #Aqui eu mostro os filmes e series que existem dentro da minha playlist
         for programas in self._programas:
             print(programas)
 
 
     @property
-    def tamanho(self):
+    def tamanho(self):                  #Aqui eu mostro a quantidade de itens na playlist
         return len(self._programas)
 
 
