@@ -45,6 +45,7 @@ class Playlist():
     def __init__(self, nome, programas):    #Atributos da playlist
         self.nome = nome
         self._programas = programas
+        print(programas)
 
     def __getitem__(self, item):       #Aqui o "__getitem__" esta trazendo algumas noções de sequência ao objeto e alguns métodos como "for" e "in".
         return self._programas[item]
@@ -53,10 +54,14 @@ class Playlist():
         for programas in self._programas:
             print(programas)
 
-
     @property
     def tamanho(self):                  #Aqui eu mostro a quantidade de itens na playlist
         return len(self._programas)
+
+    def adicionar(self, programa):
+        self._programas.append(programa)
+        for programa in self._programas:
+            print(programa)
 
 
 
